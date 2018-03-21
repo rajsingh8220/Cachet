@@ -16,12 +16,25 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Hændelser &amp; Planlagte',
+        'title'                    => 'Hændelser og Vedligehold',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
+        'logged'                   => '{0} Ingen åbne hændelser.|[1] Der er én åben hændelse.|[2.*] Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
-        'updates'                  => '{0} Nul opdateringer | Én opdatering |:count opdateringer',
+        'updates'                  => [
+            'title'   => 'Hændelsesopdateringer til :hændelse',
+            'count'   => '{0} Nul opdateringer |[1] Én opdatering |[2] To opdateringer | [3, *] Flere opdateringer',
+            'add'     => [
+                'title'   => 'Opret ny hændelsesopdatering',
+                'success' => 'Din nye hændelsesopdatering er oprettet.',
+                'failure' => 'En fejl opstod med hændelsesopdateringen.',
+            ],
+            'edit' => [
+                'title'   => 'Redigér hændelsesopdatering',
+                'success' => 'Hændelsesopdateringen er blevet opdateret.',
+                'failure' => 'En fejl opstod under opdateringen af hændelsesopdateringen',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Opret hændelse',
             'success' => 'Hændelse tilføjet.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Hændelsen er blevet slettet og vil ikke blive vist på din statusside.',
             'failure' => 'Hændelsen kunne ikke slettes. Prøv venligst igen.',
-        ],
-        'update' => [
-            'title'    => 'Opret ny hændelsesopdatering',
-            'subtitle' => 'Tilføj en opdatering til <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -65,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Planlagt vedligeholdelse',
+        'schedule'     => 'Vedligeholdelse',
         'logged'       => '{0} Der er intet planlagt.|Der er 1 planlagt.|Der er <strong>:count</strong> planlagte.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Abonnenter vil modtage notifikationer når hændelser oprettes eller komponenter opdateres.',
-        'verified'         => 'Bekræftet',
-        'not_verified'     => 'Ej bekræftet',
-        'subscriber'       => ':email, abonnerede :date',
-        'no_subscriptions' => 'Abonnere på alle opdateringer',
-        'add'              => [
+        'subscribers'          => 'Subscribers',
+        'description'          => 'Abonnenter vil modtage notifikationer når hændelser oprettes eller komponenter opdateres.',
+        'description_disabled' => 'For at bruge denne funktion skal du tillader folk at tilmelde sig notifikationer.',
+        'verified'             => 'Bekræftet',
+        'not_verified'         => 'Ej bekræftet',
+        'subscriber'           => ':email, abonnerede :date',
+        'no_subscriptions'     => 'Abonnere på alle opdateringer',
+        'global'               => 'Globalt tilmeldt',
+        'add'                  => [
             'title'   => 'Tilføj abonnent',
             'success' => 'Subscriber added.',
             'failure' => 'Noget gik galt under forsøget på at tilføje en abonnent. Prøv venligst igen.',

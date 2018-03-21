@@ -12,27 +12,28 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => ':timestamp laas opgedateer',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Onbekend',
             1 => 'Operasioneel',
             2 => 'Prestasieprobleme',
             3 => 'Gedeeltelike Onderbreking',
             4 => 'Groot Onderbreking',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Ander komponente',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'No incidents reported',
+        'none'         => 'Geen voorvalle aangemeld',
         'past'         => 'Vorige Voorvalle',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Geskeduleerde Instandhouding',
-        'scheduled_at' => ', scheduled :timestamp',
-        'posted'       => 'Posted :timestamp',
+        'scheduled_at' => ', :timestamp geskeduleer',
+        'posted'       => ':timestamp gepos',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Onder die Loep',
             2 => 'Geïdentifiseerd',
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Opkomend',
+            1 => 'Besig',
+            2 => 'Voltooid',
         ],
     ],
 
@@ -65,7 +66,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Laaste uur',
             'hourly'    => 'Afgelope 12 Uur',
             'weekly'    => 'Weekliks',
             'monthly'   => 'Maandeliks',
@@ -74,7 +75,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Subscribe to get the updates',
+        'subscribe'   => 'Teken in om opdaterings te kry',
         'unsubscribe' => 'Unsubscribe at :link',
         'button'      => 'Teken aan',
         'manage'      => [
@@ -116,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Stay up to date with the latest service updates from :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Tuiste',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'About This Site',

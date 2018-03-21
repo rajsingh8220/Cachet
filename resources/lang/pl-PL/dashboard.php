@@ -16,12 +16,25 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Ereignisse &amp; Termine',
+        'title'                    => 'Incydenty i Konserwacja',
         'incidents'                => 'Vorfälle',
         'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
-        'updates'                  => '{0} Zero aktualizacji|Jedna aktualizacja|:count aktualizacji',
+        'updates'                  => [
+            'title'   => 'Aktualizacje incydentu dla :incident',
+            'count'   => '{0} Zero Aktualizacji|[1] Jedna Aktualizacja|[2] Dwie Aktualizacje|[3,*] Kilka Aktualizacji',
+            'add'     => [
+                'title'   => 'Utwórz nową aktualizację zdarzenia',
+                'success' => 'Twoja aktualizacja o nowym zdarzeniu została utworzona.',
+                'failure' => 'Coś poszło nie tak z aktualizacją incydentu.',
+            ],
+            'edit' => [
+                'title'   => 'Edytuj aktualizację incydentu',
+                'success' => 'Aktualizacja incydentu została zaktualizowana.',
+                'failure' => 'Coś poszło nie tak z aktualizacją zdarzenia',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Dodano zdarzenie.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Wydarzenie zostało usunięte i nie będzie widoczne na stronie statusu.',
             'failure' => 'Wydarzenie nie mogło zostać usunięte, proszę spróbować ponownie.',
-        ],
-        'update' => [
-            'title'    => 'Utwórz nową aktualizację zdarzenia',
-            'subtitle' => 'Dodaj aktualizację do <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -65,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
+        'schedule'     => 'Konserwacja',
         'logged'       => '{0} Nie ma żadnych harmonogramów, dobra robota.|Posiadasz jeden harmonogram.|Zgłoszono <strong>:count</strong> harmonogramów.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnenten',
-        'description'      => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
-        'verified'         => 'Verifiziert',
-        'not_verified'     => 'Nicht verifiziert',
-        'subscriber'       => ':email, subskrybowany :data',
-        'no_subscriptions' => 'Zapisano do wszystkich aktualizacji',
-        'add'              => [
+        'subscribers'          => 'Abonnenten',
+        'description'          => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
+        'description_disabled' => 'Aby korzystać z tej funkcji, musisz pozwolić ludziom na rejestrację dla powiadomień.',
+        'verified'             => 'Verifiziert',
+        'not_verified'         => 'Nicht verifiziert',
+        'subscriber'           => ':email, subskrybowany :data',
+        'no_subscriptions'     => 'Zapisano do wszystkich aktualizacji',
+        'global'               => 'Globalnie subskrybowane',
+        'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
             'failure' => 'Coś poszło nie tak podczas dodawania subskrybenta, proszę spróbować ponownie.',

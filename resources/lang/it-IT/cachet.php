@@ -21,7 +21,7 @@ return [
             4 => 'Interruzione del servizio',
         ],
         'group' => [
-            'other' => 'Altri Componenti',
+            'other' => 'Altri componenti',
         ],
     ],
 
@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Manutenzione programmata',
         'scheduled_at' => ', programmata il :timestamp',
         'posted'       => 'Pubblicato :timestamp',
+        'posted_at'    => 'Pubblicato alle :timestamp',
         'status'       => [
             1 => 'Analisi',
             2 => 'Identificato',
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'In Arrivo',
+            0 => 'In arrivo',
             1 => 'In corso',
-            2 => 'Completo',
+            2 => 'Completato',
         ],
     ],
 
@@ -116,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Resta informato sugli ultimi aggiornamenti dei servizi di :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Home',
-    'description'     => 'Resta informato sugli ultimi aggiornamenti dei servizi di :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'timezone'        => 'Le date sono mostrate in :timezone.',
     'about_this_site' => 'Informazioni sul sito',

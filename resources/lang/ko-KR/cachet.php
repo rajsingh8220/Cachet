@@ -33,6 +33,7 @@ return [
         'scheduled'    => '예정된 유지 보수',
         'scheduled_at' => ', :timestamp 에 예정됨',
         'posted'       => '게시 됨 :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => '파악 중',
             2 => '확인됨',
@@ -75,11 +76,11 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => '최신 업데이트를 받아 보기 위한 구독신청.',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => '탈퇴하기 :링크',
         'button'      => '구독',
         'manage'      => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => '당신은 모든 업데이트를 구독하고 있습니다',
+            'my_subscriptions' => '당신은 다음 업데이트를 구독하고 있습니다',
         ],
         'email' => [
             'subscribe'          => '이메일 구독 신청.',
@@ -103,7 +104,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Cachet 새 버전이 나왔습니다. 업데이트 방법은 <a href="https://docs.cachethq.io/docs/updating-cachet"> 여기서 </a>확인할 수 있습니다!',
     ],
 
     // Modal
@@ -116,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Stay up to date with the latest service updates from :app.',
+        ],
+    ],
+
     // Other
     'home'            => '홈',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => '이 사이트에 대해',

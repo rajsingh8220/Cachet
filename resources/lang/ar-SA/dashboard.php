@@ -16,43 +16,51 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents & Schedule',
-        'incidents'                => 'الحالات',
+        'title'                    => 'الأعطال و الصيانة',
+        'incidents'                => 'الأعطال',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'إنشاء قالب',
-        'incident-templates'       => 'قوالب الحالات',
-        'updates'                  => '{0} لا توجد تحديثات | تحديث واحد | :count تحديثات',
+        'incident-templates'       => 'قوالب الأعطال',
+        'updates'                  => [
+            'title'   => 'تحديثات حالة العَطَل :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'إنشاء تحديث حالة جديد للعَطَل',
+                'success' => 'تم إنشاء الحالة الجديدة المتعلقة بالعَطَل.',
+                'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل.',
+            ],
+            'edit' => [
+                'title'   => 'تعديل تحديث العَطل',
+                'success' => 'تم إنشاء تحديث للحالة المتعلقة بالعَطَل.',
+                'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل',
+            ],
+        ],
         'add'                      => [
-            'title'   => 'الإبلاغ عن حالة',
-            'success' => 'تم إضافة الحالة.',
-            'failure' => 'حدث خلل أثناء إضافة الحالة، الرجاء المحاولة مرة أخرى.',
+            'title'   => 'الإبلاغ عن عَطَل',
+            'success' => 'تم إضافة العَطَل.',
+            'failure' => 'حدث خلل أثناء إضافة العَطَل، الرجاء إعادة المحاولة ثانية.',
         ],
         'edit' => [
-            'title'   => 'تعديل الحالة',
-            'success' => 'تم تحديث الحالة.',
-            'failure' => 'حدث خلل أثناء تعديل الحالة، الرجاء المحاولة مرة أخرى.',
+            'title'   => 'تعديل عَطَل',
+            'success' => 'تم تحديث حالة العَطَل.',
+            'failure' => 'حدث خلل أثناء تعديل حالة العَطَل، الرجاء إعادة المحاولة.',
         ],
         'delete' => [
-            'success' => 'تم حذف الحالة و لن تظهر في صفحة الحالة الخاصة بك.',
-            'failure' => 'حدث خلل أثناء حذف الحالة، الرجاء المحاولة مرة أخرى.',
-        ],
-        'update' => [
-            'title'    => 'إنشاء تحديث حالة جديد',
-            'subtitle' => 'إضافة تحديث إلى <strong>:incident</strong>',
-            'success'  => 'Update added.',
+            'success' => 'تم حذف العَطَل و لن تظهر في صفحة الحالة الخاصة بك.',
+            'failure' => 'تعذرت عملية حذف العَطَل، يُرجى إعادة المحاولة ثانية.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'قوالب الحالات',
+            'title' => 'قوالب الأعطال',
             'add'   => [
-                'title'   => 'إنشاء قالب حالة',
+                'title'   => 'إنشاء قالب حالة عَطَل',
                 'message' => 'You should add an incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
+                'title'   => 'تغيير النموذج',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -65,17 +73,17 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'صيانة مجدولة',
+        'schedule'     => 'صيانة',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'إضافة إجراء صيانة',
+            'success' => 'تم إضافة إجراء الصيانة.',
+            'failure' => 'طرأ هناك خلل أثناء القيام بإضافة صيانة، يُرجى إعادة المحاولة.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
+            'title'   => 'تعديل إجراء الصيانة المُبرمَجة',
+            'success' => 'تم تحديث الصيانة !',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Verified',
-        'not_verified'     => 'Not verified',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
-        'add'              => [
+        'subscribers'          => 'المشتركين',
+        'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'تم التحقق منه',
+        'not_verified'         => 'Not verified',
+        'subscriber'           => ':email, subscribed :date',
+        'no_subscriptions'     => 'Subscribed to all updates',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
@@ -168,9 +178,9 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
+        'team'        => 'فريق',
+        'member'      => 'عضو',
+        'profile'     => 'الملف الشخصي',
         'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
@@ -178,8 +188,8 @@ return [
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
+            'title'   => 'تحديث الملف الشخصي',
+            'success' => 'تم تحديث الملف الشخصي.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -195,20 +205,20 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'الإعدادات',
         'app-setup' => [
-            'app-setup'   => 'Application Setup',
-            'images-only' => 'Only images may be uploaded.',
+            'app-setup'   => 'إعدادات البرنامج',
+            'images-only' => 'لا يمكن تحميل إلّا الصور.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
         ],
         'log' => [
-            'log' => 'Log',
+            'log' => 'السجل',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'الترجمة',
         ],
         'customization' => [
             'customization' => 'Customization',
@@ -231,11 +241,11 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'السمة',
         ],
         'edit' => [
-            'success' => 'Settings saved.',
-            'failure' => 'Settings could not be saved.',
+            'success' => 'تم حفظ الإعدادات.',
+            'failure' => 'تعذرت عملية حفظ الإعدادات.',
         ],
         'credits' => [
             'credits'       => 'Credits',
@@ -249,30 +259,30 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Login',
+        'login'      => 'تسجيل الدخول',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
+    'help'        => 'المساعدة',
     'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'logout'      => 'الخروج',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifications',
-        'awesome'       => 'Awesome.',
-        'whoops'        => 'Whoops.',
+        'notifications' => 'الإشعارات',
+        'awesome'       => 'رائع.',
+        'whoops'        => 'المعذرة.',
     ],
 
     // Widgets
     'widgets' => [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest update',
+        'news'             => 'آخر الأخبار',
+        'news_subtitle'    => 'الحصول على آخر تحديث',
     ],
 
     // Welcome modal

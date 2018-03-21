@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Darrera actualització :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconegut',
             1 => 'Operatiu',
             2 => 'Problemes de rendiment',
             3 => 'Interrupció parcial',
@@ -29,10 +29,11 @@ return [
     'incidents' => [
         'none'         => 'No s\'han registrat incidents',
         'past'         => 'Incidents anteriors',
-        'stickied'     => 'Stickied Incidents',
+        'stickied'     => 'Incidents fixats',
         'scheduled'    => 'Interrupció programada',
         'scheduled_at' => ', programat',
-        'posted'       => 'Posted :timestamp',
+        'posted'       => 'Publicat :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigant',
             2 => 'Identificat',
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Propers',
+            1 => 'En curs',
+            2 => 'Completar',
         ],
     ],
 
@@ -99,7 +100,7 @@ return [
         'email'    => 'Correu electrònic',
         'password' => 'Contrasenya',
         'success'  => 'El vostre compte s\'ha creat.',
-        'failure'  => 'Something went wrong with the signup.',
+        'failure'  => 'Alguna cosa ha anat malament amb el registre.',
     ],
 
     'system' => [
@@ -116,11 +117,20 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Estigues informat de les últimes actualitzacions del servei de :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Inici',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Funciona amb <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'timezone'        => 'Les hores es mostren en :timezone.',
     'about_this_site' => 'Sobre aquest lloc',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

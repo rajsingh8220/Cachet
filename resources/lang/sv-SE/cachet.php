@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Planerat underhåll',
         'scheduled_at' => ', schemalagda: tidsstämpel',
         'posted'       => 'Upplagd :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Undersöker',
             2 => 'Identifierat',
@@ -116,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Håll dig uppdaterad med de senaste service-uppdateringarna från :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Hem',
-    'description'     => 'Håll dig uppdaterad med de senaste service-uppdateringarna från :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Tider visas i :timezone.',
     'about_this_site' => 'Om sidan',

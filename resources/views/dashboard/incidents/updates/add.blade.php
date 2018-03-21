@@ -6,15 +6,19 @@
         <i class="icon ion-navicon"></i>
     </div>
     <span class="uppercase">
-        <i class="icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+        <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.incidents') }}
     </span>
-    &gt; <small>{{ trans('dashboard.incidents.update.title') }}</small>
+    &gt; <small>{{ trans('dashboard.incidents.updates.title', ['incident' => $incident->name]) }}</small> &gt; <small>{{ trans('dashboard.incidents.updates.add.title') }}</small>
 </div>
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
+            @if(!$notifications_enabled)
+                <div class="alert alert-info" role="alert">
+                    {{ trans('forms.incidents.notify_disabled') }}
+                </div>
+            @endif
             @include('dashboard.partials.errors')
-            <p class="lead">{!! trans('dashboard.incidents.update.subtitle', ['incident' => $incident->name]) !!}</p>
             <form class="form-vertical" name="IncidentUpdateForm" role="form" method="POST" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
@@ -41,6 +45,44 @@
                             {{ trans('cachet.incidents.status')[4] }}
                         </label>
                     </div>
+                    @if($incident->component)
+                    <div class="form-group hidden" id="component-status">
+                        <input type="hidden" name="component_id" value="{{ $incident->component->id }}">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="radio-items">
+                                    @foreach(trans('cachet.components.status') as $statusID => $status)
+                                    <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="component_status" value="{{ $statusID }}">
+                                            {{ $status }}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @if($incident->component)
+                    <div class="form-group" id="component-status">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><strong>{{ $incident->component->name }}</strong></div>
+                            <div class="panel-body">
+                                <div class="radio-items">
+                                    @foreach(trans('cachet.components.status') as $statusID => $status)
+                                    <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="component_status" value="{{ $statusID }}" {{ $incident->component->status == $statusID ? "checked='checked'" : "" }}>
+                                            {{ $status }}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
                         <div class="markdown-control">

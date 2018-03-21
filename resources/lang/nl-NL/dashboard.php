@@ -16,12 +16,25 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidenten &amp; planning',
+        'title'                    => 'Incidenten & planning',
         'incidents'                => 'Incidenten',
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
         'incident-templates'       => 'Incident Sjablonen',
-        'updates'                  => '{0} Geen updates|Één update|:count updates',
+        'updates'                  => [
+            'title'   => 'Incident updates voor :incident',
+            'count'   => '{0} Geen updates |[1] Een update |[2] Twee updates | [3, *] Verscheidene updates',
+            'add'     => [
+                'title'   => 'Maak een nieuwe incident update',
+                'success' => 'Je nieuwe incident template is aangemaakt.',
+                'failure' => 'Er is iets misgegaan met de incident template.',
+            ],
+            'edit' => [
+                'title'   => 'Incident update bewerken',
+                'success' => 'De incident template is bijgewerkt.',
+                'failure' => 'Er is een fout opgetreden bij het wijzigen van de incident template',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Meld een incident',
             'success' => 'Incident toegevoegd.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Het incident is verwijderd en zal niet meer worden weergegeven op de statuspagina.',
             'failure' => 'Het incident kon niet worden verwijderd, probeer het opnieuw.',
-        ],
-        'update' => [
-            'title'    => 'Maak een nieuwe incident update',
-            'subtitle' => 'Voeg een update toe aan <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -70,17 +78,17 @@ return [
         'scheduled_at' => 'Gepland op :timestamp',
         'add'          => [
             'title'   => 'Gepland onderhoud toevoegen',
-            'success' => 'Planning toegevoegd.',
+            'success' => 'Gepland onderhoud toegevoegd.',
             'failure' => 'Er ging iets mis met het toevoegen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Gepland onderhoud bewerken',
-            'success' => 'Planning is bijgewerkt!',
+            'success' => 'Gepland onderhoud is bijgewerkt!',
             'failure' => 'Er ging iets mis met het wijzigen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'delete' => [
-            'success' => 'De planning is verwijderd en zal niet worden getoond op jouw statuspagina.',
-            'failure' => 'De planning kon niet worden verwijderd, probeer het opnieuw.',
+            'success' => 'Het geplande onderhoud is verwijderd en zal niet worden getoond op de statuspagina.',
+            'failure' => 'Het geplande onderhoud kon niet worden verwijderd, probeer het opnieuw.',
         ],
     ],
 
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnees',
-        'description'      => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
-        'verified'         => 'Geverifiëerd',
-        'not_verified'     => 'Niet geverifiëerd',
-        'subscriber'       => ':email, geabonneerd op :date',
-        'no_subscriptions' => 'Geabonneerd op alle updates',
-        'add'              => [
+        'subscribers'          => 'Abonnees',
+        'description'          => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
+        'description_disabled' => 'Om deze functie te gebruiken, moet u mensen aanmelden voor meldingen toestaan.',
+        'verified'             => 'Geverifiëerd',
+        'not_verified'         => 'Niet geverifiëerd',
+        'subscriber'           => ':email, geabonneerd op :date',
+        'no_subscriptions'     => 'Geabonneerd op alle updates',
+        'global'               => 'Globaal geabonneerd',
+        'add'                  => [
             'title'   => 'Voeg een nieuwe abonnee toe',
             'success' => 'Abonnee is toegevoegd!',
             'failure' => 'Er ging iets mis met het toevoegen van de abonnee, probeer het opnieuw.',
